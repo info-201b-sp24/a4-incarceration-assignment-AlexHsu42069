@@ -1,71 +1,83 @@
 ---
 title: "A3: Incarceration"
 output: html_document
+date: 5-20-24
 ---
+### By: Alex Hsu
+```{r setup, include=FALSE}
+library(tidyverse) # for general code
+library(usmap) # to get maps
+library(dplyr) # variable and statistic data
 
+```
 ### Introduction
 
 An introduction of the problem domain and a description of the variable(s) you are choosing to analyze (and why!)
 
+The problem for this assignment that will be the focus is incarceration and race. One of the places where racism can be most strongly seen is in the incarceration system. This is due to the policing around people of color as well as the war on drugs. Therefore I decided to go with the Washington incarceration data in order to see more specific trends on incarceration. Therefore, one of the first variables I want to analyze, is the average incarceration rate for black people as they tend to be the target of over policing. Especially in America they are the target of racism and therefore tend to suffer more from over-incarceration. Then I would also like to see the overall average of incarceration rate for all races in order to compare to the average incarceration rate of the black population. Then I would also like to analyze the average incarceration rate based on urbancity to also take into consideration how environment can effect incarcertaion rates specifically in Washington. I want to analyze both variables with rural and suburban to compare opposite environments. I also want to analyze incarceration rates of both men and women in order to analyze how gender may act as a variable on incarceration rates and how they've changed over time. 
+
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+Looking at the data collected by the Vera institute it was clear that it would be important to analyze variables surrounding incarceration by race. First off looking at one of the most affected by incarceration, the black population prison rate, it can be seen that the highest rate of incarceration for black people was 24,818 in the US in 1998. Comparing this to the white population prison rate, they had a high of only 9,945 in the same year of 1998. Comparing these two data points alone speak volumes as to how incarceration has one sidedly been effecting the black population unfairly. But what about other races? When looking at the AAPI prison population rate it can be seen that the highest was at 2031 in 2015. Furthermore when looking at the higher population rate for the latino prison population, it can be seen in 2008 having a high 25,074. When comparing this to the rest of the data it can be seen that it is not only black people that are being wrongly effected by incarceration but also Latinx as well having the highest incarceration rate out of all the data values so far. When looking at the highest average incarceration population rate in total across the US in 2009 at 478, it’s astonishing to see the difference between the highest average incarceration rate overall and the different values of incarceration rates broken down by race revealing the unnatural fluctuations in incarceration for certain races. 
 
-These will likely be calculated using your DPLYR skills, answering questions such as: 
-
-- What is the average value of my variable across all the counties (in the current year)?
-- Where is my variable the highest / lowest?
-- How much has my variable change over the last N years?
-
-Feel free to calculate and report values that you find relevant. Again, remember that the purpose is to think about how these measure of incarceration vary by race.
 
 ### The Dataset
 
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
+Who collected the data? 
+
+The Vera Institute
+
+How was the data collected or generated?
+
+The Vera Institute collected data through documents and datasets published through the Washington Department of Justice
+
+Why was the data collected?
+
+The data was collected to bring awareness about the unjust and unfairness of modern incarceration and how the data from it can be used to come up with solutions to reduce incarceration
+
+How many observations (rows) are in your data?
+
+1131
+
+How many features (columns) are in the data?
+
+23
+
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
+
+Some questions of power to consider when working with this data include considering the specific people that may have collected and curated this data. The people who collected this data tend to be the ones that are in power and non minorities. Therefore it is important to consider how even if there are good intentions for this data, there can still be consequential implications depending on how it is presented and perceived. 
+
+
 What are possible limitations or problems with this data?   (at least 200 words)
 
+Some limitations to this data include the fact that this data may not include those who were not incarcerated for a long enough period of time. It's also important to consider that those who died in prison due to unknown reasons may be left out of the data as well and therefore leading to less statistics on incarceration. Furthermore the data does not give any information on what crime was committed. Knowing what these incarcerated individuals were accused for or any context for the case or reason they were incarcerated would make the data even more helpful. Also it is important to know any health conditions or financial situations that might have motivated people at the time to do certain actions that led to incarceration. These are all extremely important data points that can shed more light on trends around incarceration and as how to stop it. Not to mention legal systems and law can be very complicated and clearly has a huge effect on incarceration rates. Knowing what policies were changing or being implemented at the time of certain trends or spikes in incarceration rates in general or for specific races would enhance the data further. Another limit of the data is not knowing any social movements or political movements that might have been going on at the time that influenced incarceration rates of certain races. 
 
 ### Trends Over Time Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+```{r, echo = FALSE, code = readLines("LinePlot.R")}
 
-The first chart that you will create and include will show the trend over time of your variable/topic. Think carefully about what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
-
-- Show more than one, but fewer than ~10 trends
-  - This may mean showing the same measure for different locations or different racial groups. Think carefully about a meaningful comparison of locations (e.g., the top 10 counties in a state, top 10 states, etc.)
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- You need a legend for your different line colors and a clear legend title
-
-When we say "clear" or "human readable" titles and labels, that means that you should not just display the variable name.
-
-Here's an example of how to run an R script inside an RMarkdown file:
-
-``````{r, echo = FALSE, code = readLines("chart1_example.R")}
 ```
+
+### Reasoning and Patterns
+
+This chart showing the black prison population over time across the US over time is important to show the incarceration by race. Specifically I chose this graph to show the extreme difference in incarceration rates between the white population and black population over time to reveal any trends during certain years that may have effected the incarcerations between the two. Some noticeable trends was that both incarceration rates for the black and white population steadily increased from 1996 to 2000. Furthermore there was slight decrease in incarceration rates for both populations around 2001 and then closer to 2004 there was an decrease in incarcertaion rate for the black population and an increase for the white population.
 
 ### Variable Comparison Chart
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+```{r, echo = FALSE, code = readLines("Scatterplot.R")}
 
-The second chart that you will create and include will show how two different (continuous) variables are related to one another. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```
 
-- You must have clear x and y axis labels
-- The chart needs a clear title 
-- If you choose to add a color encoding (not required), you need a legend for your different color and a clear legend title
+### Reasoning and Patterns
+
+This chart comparing the two variables of state and urbanicity was included in order to get more specific trends on location that can have a greater affect on minorities such as the black population. When looking at the data some patterns emerge such as noticing that urban locations have the highest average rate of incarceration by far compared to any other type of urbanicity. Furthermore we can notice the top 3 states for incarceration rate are Arizona, New York, and New Jersey. Noticeably we can see by comparing the two that there can be a correlation speculated that states with more urban cities are more likely to have a higher incarceration rate as all the top 3 states listed have relatively high urban populations
 
 ### Map
 
-Include a chart. Make sure to describe why you included the chart, and what patterns emerged
+```{r, echo = FALSE, code = readLines("Map.R")}
 
-The last chart that you will create and include will show how a variable is distributed geographically. Again, think carefully about what such a comparison means and what you want to communicate to your user (you may have to find relevant trends in the dataset first!). Here are some requirements to help guide your design:
+```
 
-- Your map needs a title
-- Your color scale needs a legend with a clear label
-- Use a map based coordinate system to set the aspect ratio of your map
+### Reasoning and Patterns
 
+I included this map in order to see how location across the US had an effect on the incarceration of the black population and to analyze trends based on location. Every state varies in it's law and legal system so by making a map of incarceration data we can see trends based on state. Some noticeable patterns in the map are that the highest incarceration rates can be found in states in both the northern, eastern, western, and southern part of the US. While locations with the lower incarceration rates seemed to lie around the center of the US. Interestingly majority of the states in the US according to this data has little to no incarceration for the black population on average.
